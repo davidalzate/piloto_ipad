@@ -40,6 +40,9 @@ var TIMEOUTMS = 20000;
 var urlLogin = "html/login.html";
 var hashLogin = "loginPage";
 
+var urlCategorias = "html/categorias.html";
+var hashCategorias = "categoriasPage";
+
 /******************************************* MENSAJES DE ERROR Y ADVERTENCIAS *****************************************/
 var msgSeleccioneCompartir = "Debe seleccionar una opci\u00F3n";
 var msgNoPassword = "Ingrese la contrase\u00F1a.";

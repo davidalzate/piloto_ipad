@@ -1,6 +1,5 @@
 //Variable global para el control de la navegación.
 var navigation;
-var idTimeoutObligatoriedad=null;
 
 //"Clase" para el control de la navegación 
 navigationController = function(){
@@ -12,10 +11,6 @@ navigationController = function(){
 	//Metodo cambiar página. Recibe de parametro el id de la página a mostrar.
 	this.goPage = function(urlPage, hashPage, direction){
 		
-		if(idTimeoutObligatoriedad!=null){
-			window.clearTimeout(idTimeoutObligatoriedad);
-			//console.log("Clearing " + idTimeoutObligatoriedad);
-		}
 		//Recupero la memoria empleada por el scroll
 		if(myScroll!=null){
 			myScroll.destroy();
@@ -43,13 +38,11 @@ navigationController = function(){
 	this.applyAnimate = function(direction){		
 		if(direction=='forward'){
 			$("#"+navigation.hashCurrentPage).show( "drop", { direction: "right" }, 700, function(){
-				idTimeoutObligatoriedad=window.setTimeout(validarObligatoriedad,500);
 				util.placeDateHolder();
 				window.scrollTo(0,0);
 				});
 		}else{
 			$("#"+navigation.hashCurrentPage).show( "drop", { direction: "left" }, 700, function(){
-				idTimeoutObligatoriedad=window.setTimeout(validarObligatoriedad,500);
 				util.placeDateHolder();
 				window.scrollTo(0,0);
 			});

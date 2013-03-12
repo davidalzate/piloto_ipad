@@ -66,7 +66,7 @@ function(){
 		var html = "";
 		html ="<div class='blackPage loadingPage'>";
 			html+="<div class='loadingGif'>";
-				html+='<br><img align="middle" id="spin" alt="loading" src="images/loading.gif">';
+				html+='<br><img align="middle" id="spin" alt="loading" src="img/loading.gif">';
 			html+='</div>';
 		html+='</div>';
 		$("body").append(html);
@@ -250,9 +250,9 @@ function(){
 		//ya que el tooltipo va flotando en medio de los 2 elementos.
 		if(msg==msgLoginInvalido){
 			offSet.top += 5;
-			html += "<img src='images/pico.png' style='left:" + (-14) + "px;top:" + 27 + "px;'>";
+			html += "<img src='img/pico.png' style='left:" + (-14) + "px;top:" + 27 + "px;'>";
 		}else{
-			html += "<img src='images/pico.png' style='left:" + (-14) + "px;top:" + 16 + "px;'>";
+			html += "<img src='img/pico.png' style='left:" + (-14) + "px;top:" + 16 + "px;'>";
 		}
 		html+="</div>";
 		$("body").append(html);
@@ -278,36 +278,7 @@ function(){
 	this.quitTooltip = function(element){
 		$('#'+element+"Tip").remove();
 	};
-	
-	/**
-	 * Función que permite establecer en color rojo las propiedades de un input (Se llamaría cuando la validacion no sea exitosa), 
-	 * ver clase ".errorRed" en expedicionRemota.css
-	 * @param: elemento			-Id del elemento html el cual se pondrá en rojo
-	 */
-	this.putError = function(elemento){
-		$('#'+elemento).addClass("errorRed");
-		if($('#'+elemento+"Button").length>0){
-			$('#'+elemento+"Button").addClass("findPersonaErrorRed");
-		}
-	};
-	
-	/**
-	 * Función que quita las propiedades del input marcado en rojo como error en el diligenciamiento del campo, devolviendolo a su estilo original
-	 *  @param: elemento			-Id del elemento html el cual le quitarán las propiedades en rojo
-	 */
-	this.quitError = function(elemento){
-		$('#'+elemento).removeClass("errorRed");
-		$('#'+elemento+"Button").removeClass("findPersonaErrorRed");
-	};
-	
-	/**
-	 * Función que quita el estilo de error a todos campos que lo contengan
-	 */
-	this.quitErrores = function(){
-		$('.errorRed').removeClass("errorRed");
-		$('.findPersonaErrorRed').removeClass("findPersonaErrorRed");
-	};
-	
+		
 	/**
 	 * Función que permite presentar un numero en formato: (.) como separador de miles y (') como separador de millones: 0'000.000
 	 * @param: numero		-Numero al cual se le requere aplicar el formato.

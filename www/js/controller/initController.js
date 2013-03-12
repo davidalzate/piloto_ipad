@@ -55,16 +55,6 @@ $(document).on('click','.tooltip',function(){
 	$(this).remove();
 });
 
-$(document).on('focus','select',function(){
-	util.quitAsterisk($(this).attr("id"));
-	util.quitTooltip($(this).attr("id"));
-	util.quitError($(this).attr("id"));
-});
-
-$(document).on('click','ul',function(){
-	util.quitTooltip($(this).attr("class"));
-});
-
 //Para longitud máxima en textarea
 $(document).on('keyup','textarea',function(){
 	//Respeta longitud máxima definida en el html
@@ -86,16 +76,7 @@ $(document).on("focus keyup","input, textarea", function(){
 	if(idElement===undefined || idElement==null || idElement==""){
 		return;
 	}	
-	util.quitAsterisk(idElement);
-	util.quitError(idElement);
 	util.quitTooltip(idElement);
-});
-
-$(document).on('click','.asterisk', function(){	
-	var id=$(this).prop("id");
-	id = id.substr(0,(id.length-8));
-	$("#"+id).trigger("focus");
-	$(this).remove();
 });
 
 //var numericoAnterior="";

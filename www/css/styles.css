@@ -18,98 +18,117 @@
  */
 * {
     -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+	-webkit-touch-callout: none; /* prevent callout to copy image, etc when tap to hold */
+	-webkit-text-size-adjust: none; *//* prevent webkit from resizing text to fit */
+	-webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
 }
 
 body {
-    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
-    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
-    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    background-color:#E4E4E4;
-    background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-gradient(
-        linear,
-        left top,
-        left bottom,
-        color-stop(0, #A7A7A7),
-        color-stop(0.51, #E4E4E4)
-    );
     background-attachment:fixed;
     font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
     font-size:12px;
-    height:100%;
-    margin:0px;
-    padding:0px;
-    text-transform:uppercase;
-    width:100%;
+    
+    width:768px;
+	height:1024px;
+	margin: 0 auto;
+	overflow: hidden;
 }
 
 /* Portrait layout (default) */
 .app {
-    background:url(../img/logo.png) no-repeat center top; /* 170px x 200px */
-    position:absolute;             /* position in the center of the screen */
-    left:50%;
-    top:50%;
-    height:50px;                   /* text area height */
-    width:225px;                   /* text area width */
-    text-align:center;
-    padding:180px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
-    margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
-                                   /* offset horizontal: half of text area width */
 }
 
 /* Landscape layout (with min-width) */
 @media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
     .app {
-        background-position:left center;
-        padding:75px 0px 75px 170px;  /* padding-top + padding-bottom + text area = image height */
-        margin:-90px 0px 0px -198px;  /* offset vertical: half of image height */
-                                      /* offset horizontal: half of image width and text area width */
     }
 }
 
-h1 {
-    font-size:24px;
-    font-weight:normal;
-    margin:0px;
-    overflow:visible;
-    padding:0px;
-    text-align:center;
+
+.contenedorFieldset{
+	margin-top:300px;
 }
 
-.event {
-    border-radius:4px;
-    -webkit-border-radius:4px;
-    color:#FFFFFF;
-    font-size:12px;
-    margin:0px 30px;
-    padding:2px 0px;
+.contenedorFieldset img{
+	margin-left:145px;
 }
 
-.event.listening {
-    background-color:#333333;
-    display:block;
+#login{
+	margin-left:122px;
+	margin-top:35px;
 }
 
-.event.received {
-    background-color:#4B946A;
-    display:none;
+#login input{
+	display: block;
+	font-size: 20px;
+	color: #a5a7aa;
+	width: 495px;
+	height: 20px;
+	background: #e4e6e7;
+	border-radius: 8px 8px 8px 8px;
+	margin: 20px 0px;
+	padding: 20px;
 }
 
-@keyframes fade {
-    from { opacity: 1.0; }
-    50% { opacity: 0.4; }
-    to { opacity: 1.0; }
+input:required:invalid, input:focus:invalid {
+  background-image: url(../img/invalid.png);
+  background-position: right top;
+  background-repeat: no-repeat;
 }
+
+input:required:valid {
+  background-image: url(../img/valid.png);
+  background-position: right top;
+  background-repeat: no-repeat;
+}
+
+#login a.btnAmarillo{
+	display: inline-block;
+    width: 353px;
+    padding: 5px 0 0 0;
+    margin-left: 90px;
  
-@-webkit-keyframes fade {
-    from { opacity: 1.0; }
-    50% { opacity: 0.4; }
-    to { opacity: 1.0; }
-}
+    background: #fee401;
+    background: -moz-linear-gradient(top, #fee401 0%, #fee401 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fee401), color-stop(100%,#e9bf14));
  
-.blink {
-    animation:fade 3000ms infinite;
-    -webkit-animation:fade 3000ms infinite;
+    box-shadow: inset 0px 0px 6px #e9bf14;
+    -webkit-box-shadow: inset 0px 0px 6px #e9bf14;
+    border: 1px solid #ffe600;
+    border-radius: 14px;
+ 
+	font-size: 22px;
+    text-align: center;
+    text-decoration: none;
+    color: #000;
+    text-shadow: 0px 1px 1px #ffffff;
+	}
+
+	
+.tooltip{
+    background-color: #F7E52D;
+    position: absolute;
+    color: #322e2c;
+    width: 120px;
+    font-size: 16px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 8px 8px 8px 8px;
+    text-shadow: black;
+    z-index: 10;
+    
+    background: -moz-linear-gradient(top, #f9db05 0%, #f9db05 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffe718), color-stop(100%,#d1ad1b));
+ 
+    box-shadow: inset 0px 0px 6px #f0cb0e;
+    -webkit-box-shadow: inset 0px 0px 6px #f0cb0e;
+/*     border: 2px solid #ffe70f; */
+    border-radius: 8px;
 }
+
+.tooltip img{
+	position:absolute;
+}
+	
