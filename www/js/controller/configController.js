@@ -2,6 +2,9 @@
 var platPC = "PC";
 var platIOS = "IOS";
 var plataforma = platPC;
+var TOUCHEEVENT = "touchend";
+var CLICKEVENT = "click";
+var appEvent = CLICKEVENT;
 
 /************************************************ URLS SERVICIOS ***************************************************/
 //Si quieres ver todos los restaurantes en la BD:

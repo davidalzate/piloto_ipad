@@ -256,8 +256,8 @@ function(){
 		}
 		html+="</div>";
 		$("body").append(html);
-		if(offSet.left>880){
-			offSet.left  = offSet.left - (offSet.left-880);
+		if(offSet.left>640){
+			offSet.left  = offSet.left - (offSet.left-640);
 		}
 		$("#"+idTip).css("left",offSet.left);
 		$("#"+idTip).css("top",offSet.top);		

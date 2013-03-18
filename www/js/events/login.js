@@ -1,7 +1,17 @@
 $(document).on('onLoadPage', '#'+hashLogin, function() {
 	$("#txt_login").val("");
 	$("#txt_password").val("");
-} );
+               
+    $(document).on(appEvent, '#btnLogin', function(evt) {
+        util.quitTooltips();
+        doLogin();
+        evt.preventDefault();
+    });
+});
+
+$(document).on('onUnloadPage', '#'+hashLogin, function() {
+    $(document).off(appEvent, '#btnLogin');
+});
 
 function validateLogin(){
 	var isValido = true
@@ -15,13 +25,6 @@ function validateLogin(){
 	//Clave vacia
 	var pass_ = util.trim($("#txt_password").val());
 	if(pass_ == null || pass_ == ""){
-		isValido = false;
-	}
-	
-	//Clave excede 30 caracteres
-	if(pass_.length > 30){
-		util.putError("txt_password");
-		util.showTooltip("#txt_password",msgPasswordLength);
 		isValido = false;
 	}
 		
@@ -50,10 +53,3 @@ function doLogin(){
 	
 	util.closeLoading();
 }
-
-
-$(document).on('click', '#btnLogin', function(evt) {
-	util.quitTooltips();
-	doLogin();
-	evt.preventDefault();
-} );

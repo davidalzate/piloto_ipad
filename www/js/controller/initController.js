@@ -2,6 +2,7 @@
 
 $(document).ready(function(){
 	navigation.goPage(urlLogin,hashLogin);
+    //navigation.goPage(urlCategorias,hashCategorias);
 	session.banderaTimer = new Date();
 });
 
@@ -210,6 +211,7 @@ function onDeviceReady(){
     
     if((dispositivo.platform).indexOf("iPad")!=-1){
         plataforma = platIOS;
+        appEvent = TOUCHEEVENT;
     }
 
 }
