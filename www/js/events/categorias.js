@@ -4,6 +4,8 @@ $(document).on('onLoadPage', '#'+hashCategorias, function() {
     $(document).on(appEvent, '.categoriaDiv', function(evt) {
         var categoria = $(this).prop("id").substr(3);
         alert("Se debe ir a la categoria: "+categoria);
+        $.data(document, categoriaSeleccionada, categoria);
+        navigation.goPage(urlCategoria,hashCategoria);
     });
                
     $(document).on(appEvent, '#bannerDiv', function(evt) {
@@ -21,15 +23,22 @@ $(document).on('onLoadPage', '#'+hashCategorias, function() {
                
     //Consumo del servicio de categorias
     try{
+        util.showLoading();
         $.ajax({
             type: "GET",
             url: urlObtenerCategorias+"?idRestaurante=1"
         }).done(fillCategorias)
         .fail(function(jqXHR, textStatus, errorThrown) {
+            //window.localStorage.removeItem(storageCategorias);
+            $.removeData(document, arrayCategorias);
+            util.closeLoading();
             alert( "fail " + errorThrown );
-              console.log(JSON.stringify(jqXHR));
+            console.log(JSON.stringify(jqXHR));
         });
     }catch(e){
+        //window.localStorage.removeItem(storageCategorias);
+        $.removeData(document, arrayCategorias);
+        util.closeLoading();
         alert( "Exception " + e);       
     }
 });
@@ -43,6 +52,8 @@ $(document).on('onUnloadPage', '#'+hashCategorias, function() {
 
 
 function fillCategorias(categorias){
+    $.data(document, arrayCategorias, categorias);
+    //window.localStorage.setItem(storageCategorias, JSON.stringify(categorias));
     var html = "";
     for(var i=0; i<categorias.length; i++){
         html+='<div class="categoriaDiv" id="cat'+categorias[i].idCategoria+'">';
@@ -53,6 +64,7 @@ function fillCategorias(categorias){
     }
     $("#categoriasContent").append(html);
     myScroll.refresh();
+    util.closeLoading();
 }
 
 

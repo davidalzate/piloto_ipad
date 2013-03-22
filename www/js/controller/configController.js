@@ -23,11 +23,13 @@ var urlObtenerElementosxCategoria = "http://nuevaeramedellin.appspot.com/nuevaer
 var urlPopulate = "http://nuevaeramedellin.appspot.com/nuevaera/identityresource?populate=yes";
 
 /*********************************************** OBJETOS LOCALSTORAGE ********************************************/
-
+//var storageCategorias = "categorias";
 
 
 /************************************************ OBJETOS EN CACHE $.data() *****************************************/
-
+var arrayCategorias = "arrayCategorias";
+var categoriaSeleccionada = "categoriaSeleccionada";
+var arrayElementosCategoria = "arrayElementosCategoria";
 
 
 /*********************************************** CONSTANTES APLICACION **************************************************/
@@ -45,6 +47,9 @@ var hashLogin = "loginPage";
 
 var urlCategorias = "html/categorias.html";
 var hashCategorias = "categoriasPage";
+
+var urlCategoria = "html/categoria.html";
+var hashCategoria = "categoriaPage";
 
 /******************************************* MENSAJES DE ERROR Y ADVERTENCIAS *****************************************/
 var msgSeleccioneCompartir = "Debe seleccionar una opci\u00F3n";

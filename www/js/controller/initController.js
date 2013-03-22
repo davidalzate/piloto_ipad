@@ -1,8 +1,8 @@
 //En este controlador se implementan funciones que son necesarias ejecutarlas al iniciar la aplicacion.
 
 $(document).ready(function(){
-	navigation.goPage(urlLogin,hashLogin);
-    //navigation.goPage(urlCategorias,hashCategorias);
+	//navigation.goPage(urlLogin,hashLogin);
+    navigation.goPage(urlCategorias,hashCategorias);
 	session.banderaTimer = new Date();
 });
 
