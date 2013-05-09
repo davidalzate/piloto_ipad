@@ -43,6 +43,11 @@
 		5B1594DD16A7569C00FEF299 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B1594DC16A7569C00FEF299 /* AssetsLibrary.framework */; };
 		842308981707CA62008C5581 /* wizSpinnerPlugin in Resources */ = {isa = PBXBuildFile; fileRef = 842308971707CA62008C5581 /* wizSpinnerPlugin */; };
 		8423089A1707CB82008C5581 /* wizSpinner.plist in Resources */ = {isa = PBXBuildFile; fileRef = 842308991707CB82008C5581 /* wizSpinner.plist */; };
+		84948C22173B7B4200C43959 /* ChildBrowser.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 84948C1B173B7B4200C43959 /* ChildBrowser.bundle */; };
+		84948C23173B7B4200C43959 /* ChildBrowserCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 84948C1D173B7B4200C43959 /* ChildBrowserCommand.m */; };
+		84948C24173B7B4200C43959 /* ChildBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84948C1F173B7B4200C43959 /* ChildBrowserViewController.m */; };
+		84948C25173B7B4200C43959 /* ChildBrowserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84948C20173B7B4200C43959 /* ChildBrowserViewController.xib */; };
+		84948C26173B7B4200C43959 /* README in Resources */ = {isa = PBXBuildFile; fileRef = 84948C21173B7B4200C43959 /* README */; };
 		84EFA0221700FEED004E7EF2 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84EFA0211700FEED004E7EF2 /* ImageIO.framework */; };
 		D4A0D8761607E02300AEF8BB /* Default-568h@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = D4A0D8751607E02300AEF8BB /* Default-568h@2x~iphone.png */; };
 		F840E1F1165FE0F500CFE078 /* config.xml in Resources */ = {isa = PBXBuildFile; fileRef = F840E1F0165FE0F500CFE078 /* config.xml */; };
@@ -107,6 +112,13 @@
 		5B1594DC16A7569C00FEF299 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		842308971707CA62008C5581 /* wizSpinnerPlugin */ = {isa = PBXFileReference; lastKnownFileType = folder; path = wizSpinnerPlugin; sourceTree = "<group>"; };
 		842308991707CB82008C5581 /* wizSpinner.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = wizSpinner.plist; sourceTree = "<group>"; };
+		84948C1B173B7B4200C43959 /* ChildBrowser.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ChildBrowser.bundle; sourceTree = "<group>"; };
+		84948C1C173B7B4200C43959 /* ChildBrowserCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChildBrowserCommand.h; sourceTree = "<group>"; };
+		84948C1D173B7B4200C43959 /* ChildBrowserCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChildBrowserCommand.m; sourceTree = "<group>"; };
+		84948C1E173B7B4200C43959 /* ChildBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChildBrowserViewController.h; sourceTree = "<group>"; };
+		84948C1F173B7B4200C43959 /* ChildBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChildBrowserViewController.m; sourceTree = "<group>"; };
+		84948C20173B7B4200C43959 /* ChildBrowserViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChildBrowserViewController.xib; sourceTree = "<group>"; };
+		84948C21173B7B4200C43959 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 		84EFA0211700FEED004E7EF2 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		8D1107310486CEB800E47090 /* NuevaEra-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "NuevaEra-Info.plist"; path = "../NuevaEra-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		D4A0D8751607E02300AEF8BB /* Default-568h@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x~iphone.png"; sourceTree = "<group>"; };
@@ -255,6 +267,13 @@
 		307C750510C5A3420062BCA9 /* Plugins */ = {
 			isa = PBXGroup;
 			children = (
+				84948C1B173B7B4200C43959 /* ChildBrowser.bundle */,
+				84948C1C173B7B4200C43959 /* ChildBrowserCommand.h */,
+				84948C1D173B7B4200C43959 /* ChildBrowserCommand.m */,
+				84948C1E173B7B4200C43959 /* ChildBrowserViewController.h */,
+				84948C1F173B7B4200C43959 /* ChildBrowserViewController.m */,
+				84948C20173B7B4200C43959 /* ChildBrowserViewController.xib */,
+				84948C21173B7B4200C43959 /* README */,
 				842308971707CA62008C5581 /* wizSpinnerPlugin */,
 			);
 			name = Plugins;
@@ -394,6 +413,9 @@
 				D4A0D8761607E02300AEF8BB /* Default-568h@2x~iphone.png in Resources */,
 				842308981707CA62008C5581 /* wizSpinnerPlugin in Resources */,
 				8423089A1707CB82008C5581 /* wizSpinner.plist in Resources */,
+				84948C22173B7B4200C43959 /* ChildBrowser.bundle in Resources */,
+				84948C25173B7B4200C43959 /* ChildBrowserViewController.xib in Resources */,
+				84948C26173B7B4200C43959 /* README in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,6 +446,8 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* AppDelegate.m in Sources */,
 				302D95F114D2391D003F00A1 /* MainViewController.m in Sources */,
+				84948C23173B7B4200C43959 /* ChildBrowserCommand.m in Sources */,
+				84948C24173B7B4200C43959 /* ChildBrowserViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

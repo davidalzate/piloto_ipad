@@ -46,9 +46,9 @@ function doLogin(){
 	//Validar a servidor
 	
 	if(login_==pass_ && pass_=="admin"){
-		//navigation.goPage(urlCategorias,hashCategorias);
+		navigation.goPage(urlCategorias,hashCategorias);
         //showCustomSpinner();
-        util.downloadFile();
+        //util.downloadFile();
 	}else{
 		util.showTooltip("#txt_login",msgLoginInvalido);
 	}

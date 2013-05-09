@@ -56,7 +56,9 @@
         <plugin name="Battery" value="CDVBattery" />
         <plugin name="Globalization" value="CDVGlobalization" />
         <plugin name="InAppBrowser" value="CDVInAppBrowser" />
-    <!--    <plugin name="WizSpinnerPlugin" value="WizSpinnerPlugin" /> -->
+        <plugin name="ChildBrowserCommand" value="ChildBrowserCommand" />
+        <plugin name="ChildBrowser" value="ChildBrowser.js" />
+
     </plugins>
 
     <access origin="*" />
