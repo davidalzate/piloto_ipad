@@ -1,9 +1,9 @@
 //En este controlador se implementan funciones que son necesarias ejecutarlas al iniciar la aplicacion.
 var cb;
 $(document).ready(function(){
-	//navigation.goPage(urlLogin,hashLogin);
+	navigation.goPage(urlLogin,hashLogin);
     //navigation.goPage(urlCategorias,hashCategorias);
-    //sdocument.location.href = "http://nuevaeramedellin.appspot.com/login";
+    //document.location.href = "http://nuevaeramedellin.appspot.com/login";
     session.banderaTimer = new Date();
 });
 
@@ -122,8 +122,8 @@ $(document).on('click','.selfPage',function(){
 //Propio para el dispositivo
 document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady(){
-    
-    var debug = true;
+   
+//    var debug = true;
     
     /*
      * Setup and install the ChildBrowser plugin to Phongap/Cordova.
@@ -131,53 +131,52 @@ function onDeviceReady(){
     if(window.plugins.childBrowser == null) {
         ChildBrowser.install();
     }
-    
+
     // Use ChildBrowser instead of redirecting the main page.
-    jso_registerRedirectHandler(window.plugins.childBrowser.showWebPage);
+//    jso_registerRedirectHandler(window.plugins.childBrowser.showWebPage);
     
     /*
      * Register a handler on the childbrowser that detects redirects and
      * lets JSO to detect incomming OAuth responses and deal with the content.
      */
-    window.plugins.childBrowser.onLocationChange = function(url){
-        url = decodeURIComponent(url);
-        console.log("Checking location: " + url);
-        jso_checkfortoken('google', url, function() {
-                          console.log("Closing child browser, because a valid response was detected.");
-                          window.plugins.childBrowser.close();
-                          });
-    };
+//    window.plugins.childBrowser.onLocationChange = function(url){
+//        url = decodeURIComponent(url);
+//        console.log("Checking location: " + url);
+//        jso_checkfortoken('google', url, function() {
+//                          console.log("Closing child browser, because a valid response was detected.");
+//                          window.plugins.childBrowser.close();
+//                          });
+//    };
     
     /*
      * Configure the OAuth providers to use.
      */
-    jso_configure({
-                  "google": {
-                  client_id: "148227528928.apps.googleusercontent.com",
-                  redirect_uri: "urn:ietf:wg:oauth:2.0:oob",
-                  authorization: "http://nuevaeramedellin.appspot.com",
-                  presenttoken: "qs"
-                  }
-    }, {"debug": debug});
+//    jso_configure({
+//                  "google": {
+//                  client_id: "148227528928.apps.googleusercontent.com",
+//                  redirect_uri: "http://localhost",
+//                  authorization: " https://accounts.google.com/o/oauth2/auth",
+//                  scope: "https://www.googleapis.com/auth/userinfo.email"
+//                  }
+//    }, {"debug": debug});
     
     // For debugging purposes you can wipe existing cached tokens...
     // jso_wipe();
     
     // jso_dump displays a list of cached tokens using console.log if debugging is enabled.
-    jso_dump();
-    
-    // Perform the protected OAuth calls.
-    $.oajax({
-            url: 'http://nuevaeramedellin.appspot.com/login',
-            jso_provider: "google",
-            jso_scopes: ["http://nuevaeramedellin.appspot.com"],
-            jso_allowia: true,
-            dataType: 'json',
-            success: function(data) {
-                console.log("Response (google):");
-                console.log(data);
-            }
-    });
+//    jso_dump();
+//
+//    // Perform the protected OAuth calls.
+//    $.oajax({
+//            url: 'http://nuevaeramedellin.appspot.com/login',
+//            jso_provider: "google",
+//                       jso_allowia: true,
+//            dataType: 'json',
+//            success: function(data) {
+//                console.log("Response (google):");
+//                console.log(data);
+//            }
+//    });
 
     
 	console.log("Name: " + window.device.name);
