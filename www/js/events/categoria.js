@@ -1,12 +1,18 @@
 $(document).on('onLoadPage', '#'+hashCategoria, function() {
+	
+	$(document).on(appEvent, '.btnVerMas', function(evt) {
+		evt.preventDefault();
+		navigation.goPage(urlElemento,hashElemento);    
+	});
+	
         var catSeleccionada = $.data(document, categoriaSeleccionada);
         if(catSeleccionada===undefined || catSeleccionada==null || catSeleccionada==""){
-            navigation.goPage(urlCategorias,hashCategorias);
+            //navigation.goPage(urlCategorias,hashCategorias);
         }
                
-        fillCategoriasNav();
+        //fillCategoriasNav();
                
-        myScroll = new iScroll('categoriasDiv');
+        //myScroll = new iScroll('categoriasDiv');
                
         $(document).on(appEvent, '.categoriaDiv', function(evt) {
             var elemento = $(this).prop("id").substr(3);
@@ -32,7 +38,7 @@ $(document).on('onLoadPage', '#'+hashCategoria, function() {
         });
                
         //Consumo del servicio de elementos de la categoria
-        loadServiceElementosxCategoria(catSeleccionada);
+        //loadServiceElementosxCategoria(catSeleccionada);
 });
 
 $(document).on('onUnloadPage', '#'+hashCategoria, function() {
@@ -41,6 +47,8 @@ $(document).on('onUnloadPage', '#'+hashCategoria, function() {
     $(document).off(appEvent, '#bannerDiv');
     $(document).off(appEvent, '#btnRevisarPedido');
     $(document).off(appEvent, '#btnToCategorias');
+    
+    $(document).off(appEvent, '.btnVerMas');
 });
 
 function fillCategoriasNav(){
@@ -92,5 +100,4 @@ function fillDetalleCategoria(elementos){
     myScroll.refresh();
     util.closeLoading();
 }
-
 

@@ -126,7 +126,7 @@ function onDeviceReady(){
 //    var debug = true;
     
     /*
-     * Setup and install the ChildBrowser plugin to Phongap/Cordova.
+     * Setup and install the ChildBrowser plugin to Phonegap/Cordova.
      */
     if(window.plugins.childBrowser == null) {
         ChildBrowser.install();

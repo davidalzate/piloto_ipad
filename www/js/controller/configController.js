@@ -11,19 +11,22 @@ var appEvent = CLICKEVENT;
 var urlObtenerRestaurantes = "http://nuevaeramedellin.appspot.com/nuevaera/identityresource";
 
 //Si quieres identificar un restaurante y obtener la información base (le pasas el parámetro id //?id=1):
-var urlObtenerRestaurante = "http://nuevaeramedellin.appspot.com/nuevaera/identityresource"; 
+var urlObtenerRestaurante = "http://nuevaeramedellin.appspot.com/nuevaera/identityresource?id=";
+
+//Identificar resource
+var urlObtenerResource = 'http://nuevaeramedellin.appspot.com/nuevaera/userresource';
 
 //Si quires ver las categorías asociadas a un restaurante (le pasas el parámetro idRestaurante //?idRestaurante=1):
-var urlObtenerCategorias = "http://nuevaeramedellin.appspot.com/nuevaera/categoryresource";
+var urlObtenerCategorias = "http://nuevaeramedellin.appspot.com/nuevaera/categoryresource?idRestaurante=";
 
 //Si quieres ver todos los elementos dentro de una categoría (le pasas el parámetro idCategoria //?idCategoria=1001):
-var urlObtenerElementosxCategoria = "http://nuevaeramedellin.appspot.com/nuevaera/elementresource";
-
-//Si quieres poblar la bd con un nuevo restaurante, categorías, elementos y anuncios (le pasas el parámetro populate=yes):
-var urlPopulate = "http://nuevaeramedellin.appspot.com/nuevaera/identityresource?populate=yes";
+var urlObtenerElementosxCategoria = "http://nuevaeramedellin.appspot.com/nuevaera/elementresource?idCategoria=";
 
 /*********************************************** OBJETOS LOCALSTORAGE ********************************************/
-//var storageCategorias = "categorias";
+var storageCategorias = "categorias";
+var storageCuentaResource = "resource";
+var storageInfoRestaurante = "restaurante";
+var storageElementos = "elementosCat";
 
 
 /************************************************ OBJETOS EN CACHE $.data() *****************************************/
@@ -50,6 +53,12 @@ var hashCategorias = "categoriasPage";
 
 var urlCategoria = "html/categoria.html";
 var hashCategoria = "categoriaPage";
+
+var urlElemento = "html/elemento.html";
+var hashElemento = "elementoPage";
+
+var urlPauta = "html/pauta.html";
+var hashPauta = "pautaPage";
 
 /******************************************* MENSAJES DE ERROR Y ADVERTENCIAS *****************************************/
 var msgSeleccioneCompartir = "Debe seleccionar una opci\u00F3n";
