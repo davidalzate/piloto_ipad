@@ -112,6 +112,41 @@ function getCategorias(){
         util.showLoading();
         $.ajax({
             type: "GET",
+            url: urlObtenerPautas+(resource.idRestaurante)
+        }).done(function(data){
+        	util.closeLoading();
+        	if(data!==undefined && data!=null && data.length!==undefined && data.length!=0){
+        		window.sessionStorage.setItem(storagePautas,JSON.stringify(data));
+        		//sincronize
+        		console.log("Pautas del restaurante obtenidas");
+        	}else{
+        		console.log("Pautas del restaurante en blanco");
+        		window.sessionStorage.removeItem(storagePautas);
+        	}
+        })
+        .fail(function(jqXHR, textStatus, errorThrown) {
+            window.sessionStorage.removeItem(storagePautas);
+            util.closeLoading();
+            console.log("ERROR obteniendo las pautas del restaurante");
+            util.showAlert("Lo sentimos, no se ha podido recuperar las pautas del restaurante.");
+            console.log(JSON.stringify(jqXHR));
+        });
+    }catch(e){
+        window.sessionStorage.removeItem(storagePautas);
+        util.closeLoading();
+        console.log("ERROR obteniendo las pautas del restaurante");
+        util.showAlert("Lo sentimos, no se ha podido recuperar las pautas del restaurante.");
+    }
+}
+
+function getCategorias(){
+    //Consumo del servicio de categorias
+	var resource = JSON.parse(window.sessionStorage.getItem(storageCuentaResource));
+    try{
+    	console.log("Obteniendo las categorias del restaurante");
+        util.showLoading();
+        $.ajax({
+            type: "GET",
             url: urlObtenerCategorias+(resource.idRestaurante)
         }).done(function(data){
         	util.closeLoading();

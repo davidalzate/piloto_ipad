@@ -251,7 +251,7 @@ function onDeviceReady(){
 										}, false);
 	
 	window.addEventListener("offline", function(){
-											util.showAlert(msgOffline,true);
+											//util.showAlert(msgOffline,true);
 										}, false);
 	
 	

@@ -19,6 +19,9 @@ var urlObtenerResource = 'http://nuevaeramedellin.appspot.com/nuevaera/userresou
 //Si quires ver las categorías asociadas a un restaurante (le pasas el parámetro idRestaurante //?idRestaurante=1):
 var urlObtenerCategorias = "http://nuevaeramedellin.appspot.com/nuevaera/categoryresource?idRestaurante=";
 
+//Obtener las pautas asociada al restaurante
+var urlObtenerPautas = "http://nuevaeramedellin.appspot.com/nuevaera/adresource?idRestaurante=";
+
 //Si quieres ver todos los elementos dentro de una categoría (le pasas el parámetro idCategoria //?idCategoria=1001):
 var urlObtenerElementosxCategoria = "http://nuevaeramedellin.appspot.com/nuevaera/elementresource?idCategoria=";
 
@@ -27,7 +30,7 @@ var storageCategorias = "categorias";
 var storageCuentaResource = "resource";
 var storageInfoRestaurante = "restaurante";
 var storageElementos = "elementosCat";
-
+var storagePautas= "pautas";
 
 /************************************************ OBJETOS EN CACHE $.data() *****************************************/
 var arrayCategorias = "arrayCategorias";
