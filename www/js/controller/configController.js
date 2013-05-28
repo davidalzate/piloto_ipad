@@ -31,6 +31,9 @@ var storageCuentaResource = "resource";
 var storageInfoRestaurante = "restaurante";
 var storageElementos = "elementosCat";
 var storagePautas= "pautas";
+var storageImagesLocatoin = "imagenes";
+var storageLastRestaunte = "ultimoRestaurante";
+var storageImagenesTotales = "todasLasImagenes";
 
 /************************************************ OBJETOS EN CACHE $.data() *****************************************/
 var arrayCategorias = "arrayCategorias";
@@ -44,6 +47,8 @@ var configInactividad = 360000; //Tiempo máximo que se le permite al usuario est
 //Para definir la dirección de la navegación en la transición de páginas
 var backward = 'backward';
 var forward = 'forward';
+
+var nombreCarpetaImagenes = "imagesNE";
 
 var TIMEOUTMS = 20000;
 

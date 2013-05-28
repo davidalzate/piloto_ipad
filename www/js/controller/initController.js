@@ -1,10 +1,15 @@
 //En este controlador se implementan funciones que son necesarias ejecutarlas al iniciar la aplicacion.
 var cb;
+
+var sitemaFicheros = null;
+var carpetaImagenes = null;
+var rutaCarpetaImages = "";
+
 $(document).ready(function(){
-	navigation.goPage(urlLogin,hashLogin);
+	//navigation.goPage(urlLogin,hashLogin);
     //navigation.goPage(urlCategorias,hashCategorias);
     //document.location.href = "http://nuevaeramedellin.appspot.com/login";
-    session.banderaTimer = new Date();
+    //session.banderaTimer = new Date();
 });
 
 $(document).on('click','li a',function(evt){
@@ -271,6 +276,64 @@ function onDeviceReady(){
         plataforma = platIOS;
         appEvent = TOUCHEEVENT;
     }
-
+    
+    console.log("Device  " + (dispositivo.platform));
+    
+    window.requestFileSystem(
+		LocalFileSystem.PERSISTENT, 
+		0,
+		function onFileSystemSuccess(fileSystem) {			
+			sitemaFicheros = fileSystem.root;
+			console.log("SistemaFicheros "+ sitemaFicheros);
+			sitemaFicheros.getDirectory(
+				nombreCarpetaImagenes, 
+				{create: true}, 
+				function(directorio){
+					carpetaImagenes = directorio;
+					
+					carpetaImagenes.getFile(
+                        "dummy.html",
+                        {create: true, exclusive: false},
+                        function gotFileEntry(fileEntry){
+                        	rutaCarpetaImages = fileEntry.fullPath.replace("dummy.html","");
+                            fileEntry.remove();
+                            console.log("Ruta imagenes "+ rutaCarpetaImages);
+                            
+        					//Continuar con la carga de la app
+        					navigation.goPage(urlLogin,hashLogin);
+        				    session.banderaTimer = new Date();
+                        }, 
+                        function(evt){
+                        	console.log(evt.target.error.code);
+                        	navigator.notification.alert(
+        					    'No fue posible acceder al almacenamiento.',  // message
+        					    function(){},         // callback
+        					    'Atención',           // title
+        					    'Aceptar'             // buttonName
+        					);
+                        }
+                    );
+				}, 
+				function fail(error) {
+					console.log(error);
+					navigator.notification.alert(
+					    'No fue posible acceder al almacenamiento.',  // message
+					    function(){},         // callback
+					    'Atención',           // title
+					    'Aceptar'             // buttonName
+					);
+				}
+			);
+		},
+		function fail(evt) {
+			navigator.notification.alert(
+			    'No fue posible acceder al almacenamiento.',  // message
+			    function(){},         // callback
+			    'Atención',           // title
+			    'Aceptar'             // buttonName
+			);
+		}
+	);
 }
+
 $.event.special.swipe.horizontalDistanceThreshold="180";

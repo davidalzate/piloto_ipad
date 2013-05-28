@@ -425,13 +425,14 @@ function(){
 			
 		});	
 	};
+	
 };
 
 util = new Util();
 
 
 /**
- * Función para realizar precarga de imágenes, inicialmente empleada en nivel de protección, se invoca así:
+ * Función para realizar precarga de imágenes, se invoca así:
  * jQuery.preLoadImages("pathToImage/image.png","pathToImage/image2.png", ... );
  */
 (function($) {

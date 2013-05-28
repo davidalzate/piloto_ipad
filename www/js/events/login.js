@@ -14,18 +14,20 @@ $(document).on('onLoadPage', '#'+hashLogin, function() {
 		util.quitTooltips();
 		//doLogin();
 		
-//        var oAuth = liquid.helper.oauth;
-//        if (oAuth.isAuthorized()) {
-//        	console.log("Evento del boton, ya esta autorizado. Proceder carga inicial.");
-        	//getResource();
-			//Se quema el acceso  como ilforno1
-			window.sessionStorage.setItem(storageCuentaResource,JSON.stringify({idRestaurante:73002}))
-			doCargaInicial();
-            navigation.goPage(urlCategorias,hashCategorias);
-//        }else{
-//        	console.log("Evento del boton, aun no esta autorizado. Proceder hacer login.");
-//        	liquid.helper.oauth.authorize(doLogin);
-//        }
+        var oAuth = liquid.helper.oauth;
+        if (oAuth.isAuthorized()) {
+        	console.log("Evento del boton, ya esta autorizado. Proceder carga inicial.");
+        	getResource();
+			
+		//TODO Quitar este acceso quemado despues
+		//Se quema el acceso  como ilforno1
+//		window.sessionStorage.setItem(storageCuentaResource,JSON.stringify({idRestaurante:73002}))
+//		doCargaInicial();
+
+        }else{
+        	console.log("Evento del boton, aun no esta autorizado. Proceder hacer login.");
+        	liquid.helper.oauth.authorize(doLogin);
+        }
 
 		evt.preventDefault();
 	} );
