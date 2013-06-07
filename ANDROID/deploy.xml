@@ -1,0 +1,25 @@
+<project name="DeployToAppserv" default="dist" basedir=".">
+    <description>
+        Ant file to deploy to appserv directory
+    </description>
+  <!-- set global properties for this build -->
+  <property name="appservDirectory" location="E:\AppServ\www\nuevaera\"/>
+  <property name="assetsDirectory" location="E:\Desarrollo\Workspace\Android\proyectoEclipse\assets\www\"/>
+
+  <target name="init">
+    <!-- Create the time stamp -->
+    <tstamp/>
+    <!-- Create the appServ directory structure used by project -->
+    <mkdir dir="${appservDirectory}"/>
+  </target>
+
+  <target name="dist" depends="init" description="copy files" >
+  	 <delete includeemptydirs="true">
+  	   <fileset dir="${appservDirectory}"/>
+  	 </delete>
+     <copy todir="${appservDirectory}">
+	    <fileset dir="${assetsDirectory}"/>
+	  </copy>
+  </target>
+
+</project>
